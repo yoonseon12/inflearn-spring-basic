@@ -3,7 +3,10 @@ package inflearnSpringBasic.inflearnSpringBasic.order;
 import static org.assertj.core.api.Assertions.assertThat;	
 
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import inflearnSpringBasic.inflearnSpringBasic.AppConfig;
 import inflearnSpringBasic.inflearnSpringBasic.order.object.Order;
@@ -14,17 +17,19 @@ import inflearnSpringBasic.inflearnSpringBasic.member.service.MemberService;
 
 public class TestOrderService {
 	
-	private MemberService memberService;
-	private OrderService orderService;
+	ApplicationContext ac = new AnnotationConfigApplicationContext(AppConfig.class);
+	MemberService memberService = ac.getBean("memberService", MemberService.class);
+	OrderService  orderService	= ac.getBean("orderService" , OrderService.class);
 	
 	@BeforeEach
 	public void beforeEach() {
-		AppConfig appConfig = new AppConfig();
-		memberService = appConfig.memberService();
-		orderService = appConfig.orderService();
+//		AppConfig appConfig = new AppConfig();
+//		memberService = appConfig.memberService();
+//		orderService = appConfig.orderService();
 	}
 	
 	@Test
+	@DisplayName("주문한다.")
 	void createOrder() {
 		this.memberService.join(new Member(1L, "member1", Grade.BASIC));
 		this.memberService.join(new Member(2L, "member2", Grade.VIP));
