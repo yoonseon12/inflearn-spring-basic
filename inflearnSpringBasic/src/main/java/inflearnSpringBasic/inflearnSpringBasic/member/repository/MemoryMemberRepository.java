@@ -5,7 +5,7 @@ import java.util.concurrent.ConcurrentHashMap;
 
 import inflearnSpringBasic.inflearnSpringBasic.member.object.Member;
 
-public class MemoryMemberReposirory implements MemberRepository {
+public class MemoryMemberRepository implements MemberRepository {
 	
 	private static Map<Long, Member> store = new ConcurrentHashMap<>();
 	

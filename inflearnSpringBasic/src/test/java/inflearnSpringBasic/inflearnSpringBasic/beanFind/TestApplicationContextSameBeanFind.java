@@ -13,7 +13,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 import inflearnSpringBasic.inflearnSpringBasic.member.repository.MemberRepository;
-import inflearnSpringBasic.inflearnSpringBasic.member.repository.MemoryMemberReposirory;
+import inflearnSpringBasic.inflearnSpringBasic.member.repository.MemoryMemberRepository;
 
 public class TestApplicationContextSameBeanFind {
 	
@@ -51,12 +51,12 @@ public class TestApplicationContextSameBeanFind {
 		
 		@Bean
 		public MemberRepository memberRepository1() {
-			return new MemoryMemberReposirory();
+			return new MemoryMemberRepository();
 		}
 		
 		@Bean
 		public MemberRepository memberRepository2() {
-			return new MemoryMemberReposirory();
+			return new MemoryMemberRepository();
 		}
 	}
 }

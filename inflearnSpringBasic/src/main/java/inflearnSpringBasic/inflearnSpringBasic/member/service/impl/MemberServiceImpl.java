@@ -2,7 +2,7 @@ package inflearnSpringBasic.inflearnSpringBasic.member.service.impl;
 
 import inflearnSpringBasic.inflearnSpringBasic.member.object.Member;
 import inflearnSpringBasic.inflearnSpringBasic.member.repository.MemberRepository;
-import inflearnSpringBasic.inflearnSpringBasic.member.repository.MemoryMemberReposirory;
+import inflearnSpringBasic.inflearnSpringBasic.member.repository.MemoryMemberRepository;
 import inflearnSpringBasic.inflearnSpringBasic.member.service.MemberService;
 
 public class MemberServiceImpl implements MemberService {

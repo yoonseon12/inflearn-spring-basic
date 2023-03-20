@@ -1,16 +1,15 @@
 package inflearnSpringBasic.inflearnSpringBasic;
 
-import inflearnSpringBasic.inflearnSpringBasic.order.service.impl.OrderServiceImpl;
-import inflearnSpringBasic.inflearnSpringBasic.order.service.OrderService;
-
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 import inflearnSpringBasic.inflearnSpringBasic.discount.DiscountPolicy;
 import inflearnSpringBasic.inflearnSpringBasic.discount.RateDiscountPolicy;
-import inflearnSpringBasic.inflearnSpringBasic.member.repository.MemoryMemberReposirory;
+import inflearnSpringBasic.inflearnSpringBasic.member.repository.MemoryMemberRepository;
 import inflearnSpringBasic.inflearnSpringBasic.member.service.MemberService;
 import inflearnSpringBasic.inflearnSpringBasic.member.service.impl.MemberServiceImpl;
+import inflearnSpringBasic.inflearnSpringBasic.order.service.OrderService;
+import inflearnSpringBasic.inflearnSpringBasic.order.service.impl.OrderServiceImpl;
 
 @Configuration
 public class AppConfig {
@@ -18,19 +17,19 @@ public class AppConfig {
 	@Bean
 	public MemberService memberService() {
 		return new MemberServiceImpl(
-				memoryMemberReposirory());
+				memoryMemberRepository());
+	}
+	
+	@Bean
+	public MemoryMemberRepository memoryMemberRepository() {
+		return new MemoryMemberRepository();
 	}
 	
 	@Bean
 	public OrderService orderService() {
 		return new OrderServiceImpl(
-				memoryMemberReposirory(),
+				memoryMemberRepository(),
 				discountPolicy());
-	}
-	
-	@Bean
-	public MemoryMemberReposirory memoryMemberReposirory() {
-		return new MemoryMemberReposirory();
 	}
 	
 	@Bean
