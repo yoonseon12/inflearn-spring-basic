@@ -22,6 +22,11 @@ public class OrderServiceImpl implements OrderService {
 		int discountPrice = this.discountPolicy.discount(member, itemPrice);
 		
 		return new Order(memberId, itemName, itemPrice, discountPrice);
+	} 
+	
+	// 테스트용
+	public MemberRepository getMemberRepository() {
+		return this.memberRepository;
 	}
 
 }
