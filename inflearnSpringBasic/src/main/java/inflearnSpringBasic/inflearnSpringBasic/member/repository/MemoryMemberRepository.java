@@ -3,8 +3,11 @@ package inflearnSpringBasic.inflearnSpringBasic.member.repository;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
+import org.springframework.stereotype.Component;
+
 import inflearnSpringBasic.inflearnSpringBasic.member.object.Member;
 
+@Component
 public class MemoryMemberRepository implements MemberRepository {
 	
 	private static Map<Long, Member> store = new ConcurrentHashMap<>();
