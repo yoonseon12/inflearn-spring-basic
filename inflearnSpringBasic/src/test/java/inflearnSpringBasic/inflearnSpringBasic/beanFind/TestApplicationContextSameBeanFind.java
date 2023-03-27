@@ -22,7 +22,7 @@ public class TestApplicationContextSameBeanFind {
 	@Test
 	@DisplayName("같은 타입으로 Bean 조회 시 중복오류가 발생한다.")
 	void findBeanByTypeDupl() {
-		MemberRepository bean = ac.getBean(MemberRepository.class);
+//		MemberRepository bean = ac.getBean(MemberRepository.class);
 		
 		Assertions.assertThrows(NoUniqueBeanDefinitionException.class,
 				() -> ac.getBean(MemberRepository.class));

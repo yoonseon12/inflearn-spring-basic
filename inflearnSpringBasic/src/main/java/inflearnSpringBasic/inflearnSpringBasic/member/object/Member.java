@@ -1,5 +1,6 @@
 package inflearnSpringBasic.inflearnSpringBasic.member.object;
 
+
 /**
  * 회원 Object
  *
